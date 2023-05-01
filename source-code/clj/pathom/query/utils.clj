@@ -3,7 +3,7 @@
     (:require [http.api           :as http]
               [noop.api           :refer [return]]
               [pathom.debug.state :as debug.state]
-              [pathom.env.helpers :as env.helpers]
+              [pathom.env.utils   :as env.utils]
               [reader.api         :as reader]
               [vector.api         :as vector]))
 
@@ -63,4 +63,4 @@
   ;
   ; @return (vector)
   [env]
-  (-> env env.helpers/env->request request->query))
+  (-> env env.utils/env->request request->query))

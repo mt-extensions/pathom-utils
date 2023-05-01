@@ -1,7 +1,7 @@
 
 (ns pathom.query.side-effects
     (:require [com.wsscode.pathom3.interface.eql :as pathom.eql]
-              [pathom.query.helpers              :as query.helpers]
+              [pathom.query.utils                :as query.utils]
               [pathom.register.state             :as register.state]))
 
 ;; ----------------------------------------------------------------------------
@@ -26,6 +26,6 @@
   ;
   ; @return (map)
   [request]
-  (let [query       (query.helpers/request->query request)
+  (let [query       (query.utils/request->query request)
         environment (assoc @register.state/ENVIRONMENT :request request)]
        (process-query! environment query)))

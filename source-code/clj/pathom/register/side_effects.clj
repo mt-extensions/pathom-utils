@@ -1,7 +1,6 @@
 
 (ns pathom.register.side-effects
     (:require [com.wsscode.pathom3.connect.indexes :as pathom.ci]
-              [pathom.register.helpers             :as register.helpers]
               [pathom.register.state               :as register.state]
               [random.api                          :as random]))
 
