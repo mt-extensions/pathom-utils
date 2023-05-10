@@ -1,6 +1,6 @@
 
 {:paths ["source-code/clj"]
  :deps  {bithandshake/cljc-fruits {:git/url "https://github.com/bithandshake/cljc-fruits"
-                                   :sha     "786f0c748e65d455846d078b2b4715409db2f0d6"}
+                                   :sha     "aad6e1d6d74899054bfe515a2acc5f80a171c31b"}
          com.wsscode/pathom3      {:sha     "13e6dec387bd5b5c73e64ca82409a7440b4b1199"
                                    :git/url "https://github.com/wilkerlucio/pathom3"}}}
