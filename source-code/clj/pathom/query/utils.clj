@@ -1,7 +1,6 @@
 
 (ns pathom.query.utils
     (:require [http.api           :as http]
-              [noop.api           :refer [return]]
               [pathom.debug.state :as debug.state]
               [pathom.env.utils   :as env.utils]
               [reader.api         :as reader]
@@ -31,20 +30,20 @@
   [request]
   ; When uploading files the request body is a FormData object which contains
   ; the query as a string!
-  (letfn [(query-f [query] (cond (vector? query) (return               query)
-                                 (string? query) (reader/string->mixed query)))
-          (debug-f [query] (if @debug.state/DEBUG-MODE? (vector/cons-item query :pathom/debug)
-                                                        (return           query)))]
+  (letfn [(query-f [query] (cond (vector? query) (-> query)
+                                 (string? query) (-> query reader/string->mixed)))
+          (debug-f [query] (if @debug.state/DEBUG-MODE? (-> query (vector/cons-item :pathom/debug))
+                                                        (-> query)))]
 
          ; BUG#4529
-         ; In case of the query is a vector with one keyword item, ...
-         ; ... the received query in the params map losts its containing vector,
-         ;     therefore the query has to be read from the transit-params map!
+         ; In case of the query is a vector with only one keyword item, ...
+         ; ... the received query in the 'params' map somehow looses its containing vector,
+         ;     therefore the query has to be derived from the 'transit-params' map instead!
          ;
          ; E.g. [:my-resolver]                            <= sent by the client
          ;      =>
          ;      {:transit-params {:query [:my-resolver]}  <= received by the server
-         ;       :params         {:query :my-resolver}}   <= received by the server
+         ;       :params         {:query :my-resolver}}   <= received by the server (where is the containing vector?)
          (if-let [query (http/request->transit-param request :query)]
                  (-> query query-f debug-f)
                  (if-let [query (http/request->param request :query)]

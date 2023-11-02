@@ -1,7 +1,6 @@
 
 (ns pathom.debug.resolvers
     (:require [com.wsscode.pathom3.connect.operation :refer [defresolver]]
-              [noop.api                              :refer [return]]
               [pathom.query.utils                    :as query.utils]
               [pathom.register.side-effects          :as register.side-effects]))
 
@@ -17,7 +16,7 @@
   ; @return (string)
   [env _]
   (-> env query.utils/env->query str println)
-  (return "Follow the white rabbit"))
+  (-> "Follow the white rabbit"))
 
 (defresolver debug
              ; @ignore

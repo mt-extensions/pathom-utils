@@ -1,7 +1,6 @@
 
 (ns pathom.env.utils
-    (:require [com.wsscode.pathom3.connect.operation :as pathom.co]
-              [noop.api                              :refer [return]]))
+    (:require [com.wsscode.pathom3.connect.operation :as pathom.co]))
 
 ;; ----------------------------------------------------------------------------
 ;; ----------------------------------------------------------------------------
@@ -14,8 +13,8 @@
   ; (env->request {...})
   ;
   ; @return (map)
-  [{:keys [request]}]
-  (return request))
+  [env]
+  (:request env))
 
 (defn env->resolver-params
   ; @param (map) env
@@ -25,8 +24,9 @@
   ;
   ; @return (map)
   [env]
-  ; The 'pathom.co/params' functions only returns the parameters in case of resolver functions.
-  (pathom.co/params env))
+  ; - The 'pathom.co/params' function returns parameters only of resolver functions.
+  ; - The 'pathom.co/params' function always returns a map.
+  (-> env pathom.co/params))
 
 (defn env->mutation-params
   ; @param (map) env
@@ -36,12 +36,10 @@
   ;
   ; @return (map)
   [env]
-  ; It seems that the is possible to extract the parameters from 'env' map in case of mutation functions.
-  ;
-  ; The 'pathom.co/params' function that used by the env->resolver-params' function always returns a map, therefore
-  ; the 'env->mutation-params' always returns a map as well.
+  ; - It seems that is possible to extract the parameters of mutation functions from the 'env' map.
+  ; - The 'env->resolver-params' function always returns a map, therefore the 'env->mutation-params' always returns a map as well.
   (or (-> env :com.wsscode.pathom3.connect.planner/graph :com.wsscode.pathom3.connect.planner/mutations first :params)
-      (return {})))
+      (-> {})))
 
 (defn env->params
   ; @param (map) env
@@ -52,8 +50,8 @@
   ; @return (map)
   [env]
   ; The 'env->resolver-params' and 'env->mutation-params' functions always return maps
-  ; so if the first one ('env->resolver-params') returns an empty value this functions goes
-  ; to the other one ('env->mutation-params') and tries to extract the params by it.
+  ; so if the first one ('env->resolver-params') returns an empty value this functions steps
+  ; to the other one ('env->mutation-params') and tries to extract the params with it.
   (if (-> env env->resolver-params empty? not)
       (-> env env->resolver-params)
       (-> env env->mutation-params)))
@@ -67,8 +65,7 @@
   ;
   ; @return (*)
   [env param-key]
-  (let [params (env->params env)]
-       (param-key params)))
+  (-> env env->params param-key))
 
 (defn env<-param
   ; @param (map) env
