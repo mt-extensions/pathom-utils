@@ -53,7 +53,7 @@
 (defn env->mutation-params
   [env]
   (or (-> env :com.wsscode.pathom3.connect.planner/graph :com.wsscode.pathom3.connect.planner/mutations first :params)
-      (return {})))
+      (-> {})))
 ```
 
 </details>
@@ -94,8 +94,7 @@
 ```
 (defn env->param
   [env param-key]
-  (let [params (env->params env)]
-       (param-key params)))
+  (-> env env->params param-key))
 ```
 
 </details>
@@ -177,8 +176,8 @@
 
 ```
 (defn env->request
-  [{:keys [request]}]
-  (return request))
+  [env]
+  (:request env))
 ```
 
 </details>
@@ -218,7 +217,7 @@
 ```
 (defn env->resolver-params
   [env]
-  (pathom.co/params env))
+  (-> env pathom.co/params))
 ```
 
 </details>
