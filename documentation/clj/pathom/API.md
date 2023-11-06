@@ -1,5 +1,9 @@
 
-# pathom.api Clojure namespace
+### pathom.api
+
+Functional documentation of the pathom.api Clojure namespace
+
+---
 
 ##### [README](../../../README.md) > [DOCUMENTATION](../../COVER.md) > pathom.api
 
@@ -30,6 +34,8 @@
 - [set-debug-mode!](#set-debug-mode)
 
 - [toggle-debug-mode!](#toggle-debug-mode)
+
+---
 
 ### env->mutation-params
 
@@ -565,5 +571,5 @@ Toggles the debug mode on/off.
 
 ---
 
-This documentation is generated with the [clj-docs-generator](https://github.com/bithandshake/clj-docs-generator) engine.
+<sub>This documentation is generated with the [clj-docs-generator](https://github.com/bithandshake/clj-docs-generator) engine.</sub>
 
