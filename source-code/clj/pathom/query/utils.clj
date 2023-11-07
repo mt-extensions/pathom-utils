@@ -28,10 +28,9 @@
   ;
   ; @return (vector)
   [request]
-  ; When uploading files the request body is a FormData object which contains
-  ; the query as a string!
+  ; When uploading files the request body is a FormData object which contains the query as a string!
   (letfn [(query-f [query] (cond (vector? query) (-> query)
-                                 (string? query) (-> query reader/string->mixed)))
+                                 (string? query) (-> query reader/read-edn)))
           (debug-f [query] (if @debug.state/DEBUG-MODE? (-> query (vector/cons-item :pathom/debug))
                                                         (-> query)))]
 
@@ -40,10 +39,10 @@
          ; ... the received query in the 'params' map somehow looses its containing vector,
          ;     therefore the query has to be derived from the 'transit-params' map instead!
          ;
-         ; E.g. [:my-resolver]                            <= sent by the client
-         ;      =>
-         ;      {:transit-params {:query [:my-resolver]}  <= received by the server
-         ;       :params         {:query :my-resolver}}   <= received by the server (where is the containing vector?)
+         ; E.g., [:my-resolver]                            <= sent by the client
+         ;       =>
+         ;       {:transit-params {:query [:my-resolver]}  <= received by the server
+         ;        :params         {:query :my-resolver}}   <= received by the server (where is the containing vector?)
          (if-let [query (http/request->transit-param request :query)]
                  (-> query query-f debug-f)
                  (if-let [query (http/request->param request :query)]

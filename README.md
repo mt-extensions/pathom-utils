@@ -27,6 +27,9 @@ You can track the changes of the <strong>pathom-api</strong> library [here](CHAN
 
 # Usage
 
+> Some parameters of the following functions and some further functions are not discussed in this file.
+  To learn more about the available functionality, check out the [functional documentation](documentation/COVER.md)!
+
 ### Index
 
 - [How to register server-side query handlers?](#how-to-register-server-side-query-handlers)
