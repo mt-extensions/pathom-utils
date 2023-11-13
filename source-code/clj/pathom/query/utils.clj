@@ -35,7 +35,7 @@
                                                         (-> query)))]
 
          ; BUG#4529
-         ; In case of the query is a vector with only one keyword item, ...
+         ; In case the query is a vector with only one keyword item, ...
          ; ... the received query in the 'params' map somehow looses its containing vector,
          ;     therefore the query has to be derived from the 'transit-params' map instead!
          ;
