@@ -37,7 +37,7 @@
   ; @return (map)
   [env]
   ; - It seems that is possible to extract the parameters of mutation functions from the 'env' map.
-  ; - The 'env->resolver-params' function always returns a map, therefore the 'env->mutation-params' always returns a map as well.
+  ; - The 'env->resolver-params' function always returns a map. Therefore, the 'env->mutation-params' always returns a map as well.
   (or (-> env :com.wsscode.pathom3.connect.planner/graph :com.wsscode.pathom3.connect.planner/mutations first :params)
       (-> {})))
 

@@ -36,8 +36,8 @@
 
          ; BUG#4529
          ; In case the query is a vector with only one keyword item, ...
-         ; ... the received query in the 'params' map somehow looses its containing vector,
-         ;     therefore the query has to be derived from the 'transit-params' map instead!
+         ; ... the received query in the 'params' map somehow looses its containing vector.
+         ;     Therefore, the query has to be derived from the 'transit-params' map instead!
          ;
          ; E.g., [:my-resolver]                            <= sent by the client
          ;       =>
