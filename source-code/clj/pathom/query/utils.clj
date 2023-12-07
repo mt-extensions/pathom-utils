@@ -1,10 +1,10 @@
 
 (ns pathom.query.utils
-    (:require [http.api           :as http]
+    (:require [fruits.http.api    :as http]
+              [fruits.reader.api  :as reader]
+              [fruits.vector.api  :as vector]
               [pathom.debug.state :as debug.state]
-              [pathom.env.utils   :as env.utils]
-              [reader.api         :as reader]
-              [vector.api         :as vector]))
+              [pathom.env.utils   :as env.utils]))
 
 ;; ----------------------------------------------------------------------------
 ;; ----------------------------------------------------------------------------
