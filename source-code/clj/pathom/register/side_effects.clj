@@ -13,7 +13,7 @@
   ; After a handler function or functions being registered the 'reset-environment!'
   ; function rebuilds the Pathom environment in order to the re-registered handler
   ; functions overwrite their previously registered instances.
-  ; Its important in development builds where a code reloader (e.g. wrap-reload)
+  ; Its important in development builds where a code reloader (e.g., wrap-reload)
   ; can reload the changed namespaces and register changed handler functions.
   (let [handlers    (-> register.state/HANDLERS deref vals)
         registry    [handlers]
