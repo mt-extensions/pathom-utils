@@ -19,7 +19,7 @@ Check out the latest commit on the [release branch](https://github.com/bithandsh
 
 ### Documentation
 
-The <strong>pathom-api</strong> functional documentation is [available here](documentation/COVER.md).
+The <strong>pathom-api</strong> functional documentation is [available here](https://bithandshake.github.io/pathom-api).
 
 ### Changelog
 
