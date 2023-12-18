@@ -10,7 +10,7 @@ library.
 
 ```
 {:deps {bithandshake/pathom-api {:git/url "https://github.com/bithandshake/pathom-api"
-                                 :sha     "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"}}
+                                 :sha     "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"}}}
 ```
 
 ### Current version
