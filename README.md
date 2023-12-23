@@ -3,8 +3,7 @@
 
 ### Overview
 
-The <strong>pathom-api</strong> is an EQL query handler based on the [wilkerlucio / pathom3]
-library.
+The <strong>pathom-api</strong> is a simple EQL query handler for Clojure projects based on the [wilkerlucio / pathom3] library.
 
 ### deps.edn
 
