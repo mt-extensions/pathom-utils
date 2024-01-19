@@ -30,7 +30,7 @@
   [request]
   ; When uploading files the request body is a FormData object which contains the query as a string!
   (letfn [(query-f [query] (cond (vector? query) (-> query)
-                                 (string? query) (-> query reader/read-edn)))
+                                 (string? query) (-> query reader/parse-edn)))
           (debug-f [query] (if @debug.state/DEBUG-MODE? (-> query (vector/cons-item :pathom/debug))
                                                         (-> query)))]
 
