@@ -1,5 +1,5 @@
 
-(ns pathom.tools.register.state
+(ns pathom.tools.register.state)
 
 ;; ----------------------------------------------------------------------------
 ;; ----------------------------------------------------------------------------
@@ -18,7 +18,7 @@
 ; =>
 ; {:my-environment {:my-mutation #com.wsscode.pathom3.connect.operation.Mutation{...}
 ;                   :my-resolver #com.wsscode.pathom3.connect.operation.Resolver{...} ...} ...}
- (defonce HANDLERS (atom {})))
+(defonce HANDLERS (atom {}))
 
 ; @description
 ; Stored environments.
