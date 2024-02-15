@@ -15,7 +15,7 @@
 ;
 ; @usage
 ; 1. Provide the debug resolver to the 'p.eql/process' function!
-; 2. Associate the query vector into the environment map (before processing the query)!
+; 2. Associate the query vector to the environment map (before processing the query)!
 ;
 ; (:require [com.wsscode.pathom3.interface.eql :as pathom.eql]
 ;           [pathom.dev.api                    :as pathom.dev]
