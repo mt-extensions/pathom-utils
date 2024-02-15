@@ -1,8 +1,7 @@
 
-(ns pathom.debug.resolvers
+(ns pathom.dev.debug.resolvers
     (:require [com.wsscode.pathom3.connect.operation :refer [defresolver]]
-              [pathom.query.utils                    :as query.utils]
-              [pathom.register.side-effects          :as register.side-effects]))
+              [pathom.dev.debug.messages :as debug.messages]))
 
 ;; ----------------------------------------------------------------------------
 ;; ----------------------------------------------------------------------------
@@ -11,11 +10,13 @@
   ; @ignore
   ;
   ; @param (map) env
+  ; {:query (vector)(opt)}
   ; @param (map) resolver-props
   ;
   ; @return (string)
-  [env _]
-  (-> env query.utils/env->query str println)
+  [{:keys [query]} _]
+  (if query (-> query str println)
+            (-> debug.messages/MISSING-QUERY-ERROR println))
   (-> "Follow the white rabbit"))
 
 (defresolver debug
@@ -28,8 +29,3 @@
              ; {:pathom/debug (string)}
              [env resolver-props]
              {:pathom/debug (debug-f env resolver-props)})
-
-;; ----------------------------------------------------------------------------
-;; ----------------------------------------------------------------------------
-
-(register.side-effects/reg-handler! :pathom/debug debug)
