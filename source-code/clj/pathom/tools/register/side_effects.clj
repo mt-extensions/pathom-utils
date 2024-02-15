@@ -67,7 +67,7 @@
   ; The provided environment ID identifies a specific environment that the identified handlers are removed from.
   ;
   ; @description
-  ; Remove multiple handlers (mutation and/or resolver functions) (from the HANDLERS atom), then rebuilds the corresponding environment.
+  ; Removes multiple handlers (mutation and/or resolver functions) (from the HANDLERS atom), then rebuilds the corresponding environment.
   ;
   ; @param (keyword)(opt) environment-id
   ; Default: :global

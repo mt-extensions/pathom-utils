@@ -56,8 +56,9 @@
   ;
   ; @usage
   ; (pco/defresolver my-resolver
-  ;   []
-  ;   {:my-resolver ...})
+  ;   [env _]
+  ;   (let [params (env->resolver-params env)])
+  ;        ...)
   ;
   ; @return (map)
   [env]
@@ -92,6 +93,12 @@
   ; (env->resolver-param {:com.wsscode.pathom3.connect.planner/node {:com.wsscode.pathom3.connect.planner/params {:my-param "My value"} ...} ...} :my-param)
   ; =>
   ; "My value"
+  ;
+  ; @usage
+  ; (pco/defresolver my-resolver
+  ;   [env _]
+  ;   (let [param (env->resolver-param env :my-param)])
+  ;        ...)
   ;
   ; @return (*)
   [env param-key]
@@ -195,6 +202,12 @@
   ; =>
   ; {:my-param "My value"}
   ;
+  ; @usage
+  ; (pco/defmutation my-mutation
+  ;   [env _]
+  ;   (let [params (env->mutation-params env)])
+  ;        ...)
+  ;
   ; @return (map)
   ([env]
    (env->mutation-params env nil))
@@ -245,6 +258,12 @@
   ; =>
   ; "My value"
   ;
+  ; @usage
+  ; (pco/defmutation my-mutation
+  ;   [env _]
+  ;   (let [param (env->mutation-param env :my-param)])
+  ;        ...)
+  ;
   ; @return (*)
   ([env param-key]
    (-> env (env->mutation-params)
@@ -271,15 +290,19 @@
   ; @usage
   ; (env<-mutation-param {...} :my-param "My value")
   ; =>
-  ; {}
+  ; {:com.wsscode.pathom3.connect.planner/graph {:com.wsscode.pathom3.connect.planner/mutations [{:dispatch-key my-mutation :params {:my-param "My value" ...} ...} ...] ...} ...}
   ;
   ; @usage
   ; (env<-mutation-param {...} :my-mutation :my-param "My value")
   ; =>
-  ; {}
+  ; {:com.wsscode.pathom3.connect.planner/graph {:com.wsscode.pathom3.connect.planner/mutations [{:dispatch-key my-mutation :params {:my-param "My value" ...} ...} ...] ...} ...}
   ;
   ; @return (map)
-  ; {}
+  ; {:com.wsscode.pathom3.connect.planner/graph (map)
+  ;   {:com.wsscode.pathom3.connect.planner/mutations (maps in vector)
+  ;     [{:params (map) ...} ...]
+  ;    ...}
+  ;  ...}
   ([env param-key param-value]
    (env<-mutation-param env nil param-key param-value))
 

@@ -9,7 +9,7 @@
 (defn request->query
   ; @note
   ; - The primary source of the query vector is the transit parameters map of the given request.
-  ; - The secondary source of the query vector is the parameters map of the given request.
+  ; - The fallback source of the query vector is the parameters map of the given request.
   ;
   ; @description
   ; Returns the query vector from the given request map.

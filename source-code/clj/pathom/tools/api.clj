@@ -14,6 +14,7 @@
 ; @links
 ; [pathom3.wsscode.com/docs](https://pathom3.wsscode.com/docs)
 ;
+; @---
 ; The ['reg-handlers!'](#reg-handlers_) function stores the provided handlers (mutation and/or resolver functions),
 ; then rebuilds the corresponding environment by using the 'pci/register' function.
 ;
@@ -22,8 +23,6 @@
 ; - If no environment ID is provided, the default environment ID is ':global'.
 ;
 ; @usage
-; (ns my-namespace)
-;
 ; (pco/defmutation my-mutation [_] ...)
 ; (pco/defresolver my-resolver [_] ...)
 ; (reg-handlers! :my-environment {:my-mutation my-mutation
@@ -37,6 +36,7 @@
 ; @links
 ; [pathom3.wsscode.com/docs](https://pathom3.wsscode.com/docs)
 ;
+; @---
 ; The ['get-environment'](#get-environment) function provides a specific environment (i.e. handler set) to the 'p.eql/process' function.
 ;
 ; @usage
@@ -54,6 +54,7 @@
 (def env->resolver-params env.utils/env->resolver-params)
 (def env->resolver-param  env.utils/env->resolver-param)
 (def env<-resolver-param  env.utils/env<-resolver-param)
+(def env->mutation-dex    env.utils/env->mutation-dex)
 (def env->mutation-params env.utils/env->mutation-params)
 (def env->mutation-param  env.utils/env->mutation-param)
 (def env<-mutation-param  env.utils/env<-mutation-param)

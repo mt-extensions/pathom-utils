@@ -10,11 +10,12 @@
 ; @links
 ; [pathom3.wsscode.com/docs](https://pathom3.wsscode.com/docs)
 ;
+; @---
 ; The ':pathom/debug' resolver prints the processed query to the server console.
 ;
 ; @usage
-; 1. Register the debug resolver to the 'p.eql/process' function!
-; 2. Associate the query vector into the environment map before processing the query!
+; 1. Provide the debug resolver to the 'p.eql/process' function!
+; 2. Associate the query vector into the environment map (before processing the query)!
 ;
 ; (:require [com.wsscode.pathom3.interface.eql :as pathom.eql]
 ;           [pathom.dev.api                    :as pathom.dev]
@@ -32,5 +33,12 @@
 ;; ----------------------------------------------------------------------------
 ;; ----------------------------------------------------------------------------
 
-; @redirect (pathom.dev.debug.resolvers/*)
+; @description
+; ':pathom/debug' resolver
+;
+; @usage
+; (:require [pathom.dev.api   :as pathom.dev]
+;           [pathom.tools.api :as pathom.tools])
+;
+; (pathom.tools/reg-handlers! :my-environment {:pathom/debug pathom.dev/debug})
 (def debug debug.resolvers/debug)

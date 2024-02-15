@@ -16,15 +16,28 @@
   ; @usage
   ; (get-environment)
   ; =>
-  ; {}
+  ; {:com.wsscode.pathom3.connect.indexes/index-attributes {...}
+  ;  :com.wsscode.pathom3.connect.indexes/index-io {...}
+  ;  :com.wsscode.pathom3.connect.indexes/index-oir {...}
+  ;  :com.wsscode.pathom3.connect.indexes/index-mutations {my-mutation #com.wsscode.pathom3.connect.operation.Mutation{...} ...}
+  ;  :com.wsscode.pathom3.connect.indexes/index-resolvers {my-resolver #com.wsscode.pathom3.connect.operation.Resolver{...} ...} ...}
   ;
   ; @usage
   ; (get-environment :my-environment)
   ; =>
-  ; {}
+  ; {:com.wsscode.pathom3.connect.indexes/index-attributes {...}
+  ;  :com.wsscode.pathom3.connect.indexes/index-io {...}
+  ;  :com.wsscode.pathom3.connect.indexes/index-oir {...}
+  ;  :com.wsscode.pathom3.connect.indexes/index-mutations {my-mutation #com.wsscode.pathom3.connect.operation.Mutation{...} ...}
+  ;  :com.wsscode.pathom3.connect.indexes/index-resolvers {my-resolver #com.wsscode.pathom3.connect.operation.Resolver{...} ...} ...}
   ;
   ; @return (map)
-  ; {}
+  ; {:com.wsscode.pathom3.connect.indexes/index-attributes (map)
+  ;  :com.wsscode.pathom3.connect.indexes/index-io (map)
+  ;  :com.wsscode.pathom3.connect.indexes/index-mutations (map)
+  ;  :com.wsscode.pathom3.connect.indexes/index-oir (map)
+  ;  :com.wsscode.pathom3.connect.indexes/index-resolvers (map)
+  ;  ...}
   ([]
    (get-environment :global))
 
