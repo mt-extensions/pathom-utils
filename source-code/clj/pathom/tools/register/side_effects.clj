@@ -40,7 +40,7 @@
   ; The provided environment ID identifies a specific environment that the given handlers are registered into.
   ;
   ; @description
-  ; Register multiple handlers (mutation and/or resolver functions) (into the HANDLERS atom), then rebuilds the corresponding environment.
+  ; Register multiple handlers (mutation and/or resolver functions) (into the 'HANDLERS' atom), then rebuilds the corresponding environment.
   ;
   ; @param (keyword)(opt) environment-id
   ; Default: :global
@@ -67,7 +67,7 @@
   ; The provided environment ID identifies a specific environment that the identified handlers are removed from.
   ;
   ; @description
-  ; Removes multiple handlers (mutation and/or resolver functions) (from the HANDLERS atom), then rebuilds the corresponding environment.
+  ; Removes multiple handlers (mutation and/or resolver functions) (from the 'HANDLERS' atom), then rebuilds the corresponding environment.
   ;
   ; @param (keyword)(opt) environment-id
   ; Default: :global
