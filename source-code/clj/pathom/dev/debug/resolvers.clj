@@ -1,7 +1,7 @@
 
 (ns pathom.dev.debug.resolvers
     (:require [com.wsscode.pathom3.connect.operation :refer [defresolver]]
-              [pathom.dev.debug.messages :as debug.messages]))
+              [pathom.dev.debug.messages             :as debug.messages]))
 
 ;; ----------------------------------------------------------------------------
 ;; ----------------------------------------------------------------------------

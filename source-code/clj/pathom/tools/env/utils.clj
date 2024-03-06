@@ -1,9 +1,9 @@
 
 (ns pathom.tools.env.utils
     (:require [com.wsscode.pathom3.connect.operation :as pathom.co]
-              [fruits.vector.api :as vector]
-              [fruits.map.api :as map]
-              [fruits.seqable.api :as seqable]))
+              [fruits.map.api                        :as map]
+              [fruits.seqable.api                    :as seqable]
+              [fruits.vector.api                     :as vector]))
 
 ;; ----------------------------------------------------------------------------
 ;; ----------------------------------------------------------------------------

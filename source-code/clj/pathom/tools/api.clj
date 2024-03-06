@@ -1,10 +1,10 @@
 
 (ns pathom.tools.api
-    (:require [pathom.tools.env.utils :as env.utils]
-              [pathom.tools.register.env :as register.env]
-              [pathom.tools.register.state :as register.state]
+    (:require [pathom.tools.env.utils             :as env.utils]
+              [pathom.tools.register.env          :as register.env]
               [pathom.tools.register.side-effects :as register.side-effects]
-              [pathom.tools.request.utils :as request.utils]))
+              [pathom.tools.register.state        :as register.state]
+              [pathom.tools.request.utils         :as request.utils]))
 
 ;; ----------------------------------------------------------------------------
 ;; ----------------------------------------------------------------------------

@@ -1,8 +1,8 @@
 
 (ns pathom.tools.register.side-effects
     (:require [com.wsscode.pathom3.connect.indexes :as pathom.ci]
-              [fruits.map.api :as map]
-              [pathom.tools.register.state :as register.state]))
+              [fruits.map.api                      :as map]
+              [pathom.tools.register.state         :as register.state]))
 
 ;; ----------------------------------------------------------------------------
 ;; ----------------------------------------------------------------------------
