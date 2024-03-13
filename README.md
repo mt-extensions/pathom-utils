@@ -8,17 +8,17 @@ The <strong>pathom-utils</strong> is a set of utility functions and development 
 ### deps.edn
 
 ```
-{:deps {mt-utilities/pathom-utils {:git/url "https://github.com/mt-utilities/pathom-utils"
-                                   :sha     "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"}}}
+{:deps {mt-extensions/pathom-utils {:git/url "https://github.com/mt-extensions/pathom-utils"
+                                    :sha     "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"}}}
 ```
 
 ### Current version
 
-Check out the latest commit on the [release branch](https://github.com/mt-utilities/pathom-utils/tree/release).
+Check out the latest commit on the [release branch](https://github.com/mt-extensions/pathom-utils/tree/release).
 
 ### Documentation
 
-The <strong>pathom-utils</strong> functional documentation is [available here](https://mt-utilities.github.io/pathom-utils).
+The <strong>pathom-utils</strong> functional documentation is [available here](https://mt-extensions.github.io/pathom-utils).
 
 ### Changelog
 
