@@ -1,6 +1,6 @@
 
-(ns pathom.dev.api
-    (:require [pathom.dev.debug.resolvers :as debug.resolvers]))
+(ns pathom.debug.api
+    (:require [pathom.debug.resolvers :as resolvers]))
 
 ;; ----------------------------------------------------------------------------
 ;; ----------------------------------------------------------------------------
@@ -15,10 +15,10 @@
 ;
 ; @usage
 ; (:require [com.wsscode.pathom3.interface.eql :as pathom.eql]
-;           [pathom.dev.api                    :as pathom.dev]
+;           [pathom.debug.api                  :as pathom.debug]
 ;           [pathom.tools.api                  :as pathom.tools])
 ;
-; (pathom.tools/reg-handlers! :my-environment {:pathom/debug pathom.dev/debug})
+; (pathom.tools/reg-handlers! :my-environment {:pathom/debug pathom.debug/debug})
 ;
 ; ;; Requirements:
 ; ;; - Provide the debug resolver to the 'p.eql/process' function!
@@ -37,8 +37,8 @@
 ; ':pathom/debug' resolver
 ;
 ; @usage
-; (:require [pathom.dev.api   :as pathom.dev]
+; (:require [pathom.debug.api :as pathom.debug]
 ;           [pathom.tools.api :as pathom.tools])
 ;
-; (pathom.tools/reg-handlers! :my-environment {:pathom/debug pathom.dev/debug})
-(def debug debug.resolvers/debug)
+; (pathom.tools/reg-handlers! :my-environment {:pathom/debug pathom.debug/debug})
+(def debug resolvers/debug)

@@ -1,7 +1,7 @@
 
-(ns pathom.dev.debug.resolvers
+(ns pathom.debug.resolvers
     (:require [com.wsscode.pathom3.connect.operation :refer [defresolver]]
-              [pathom.dev.debug.messages             :as debug.messages]))
+              [pathom.debug.messages :as messages]))
 
 ;; ----------------------------------------------------------------------------
 ;; ----------------------------------------------------------------------------
@@ -16,7 +16,7 @@
   ; @return (string)
   [{:keys [query]} _]
   (if query (-> query str println)
-            (-> debug.messages/MISSING-QUERY-ERROR println))
+            (-> messages/MISSING-QUERY-ERROR println))
   (-> "Follow the white rabbit"))
 
 (defresolver debug
