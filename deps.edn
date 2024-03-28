@@ -3,5 +3,5 @@
  :deps  {com.wsscode/pathom3      {:git/url "https://github.com/wilkerlucio/pathom3"
                                    :sha     "13e6dec387bd5b5c73e64ca82409a7440b4b1199"}
          bithandshake/cljc-fruits {:git/url "https://github.com/bithandshake/cljc-fruits"
-                                   :sha     "fcd4ebfed6cc44486464b5d619bef88d620c7f6a"}
+                                   :sha     "108070d0bb8d85f3682e04956a2066a3162afbd7"}
          org.clojure/clojure      {:mvn/version "1.10.1"}}}
